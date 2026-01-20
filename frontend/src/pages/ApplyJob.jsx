@@ -15,7 +15,7 @@ import ApplyPopup from "../components/ApplyPopup";
 
 const ApplyJob = () => {
   const { id } = useParams();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
   const { getToken } = useAuth();
   const [jobData, setJobData] = useState(null);
   const [isAlreadyApplied, setAlreadyApplied] = useState(false);
@@ -30,7 +30,7 @@ const ApplyJob = () => {
     backendUrl,
     userData,
     fetchUserData,
-    userApplications = [], // Default to empty array
+    userApplications = [], 
     fetchUserApplications,
   } = useContext(AppContext);
 
@@ -106,7 +106,6 @@ const ApplyJob = () => {
     }
   };
 
-  // FIXED: Added safe check for userApplications?.length
   const checkAlreadyApplied = () => {
     if (jobData && userApplications && userApplications.length > 0) {
       const hasApplied = userApplications.some((item) => item.jobId?._id === jobData._id);

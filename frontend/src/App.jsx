@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
-import { useUser, useAuth } from "@clerk/clerk-react"; // Added useAuth
-import axios from "axios"; // Added axios
-import { toast } from "react-toastify"; // Added toast
+import { useUser, useAuth } from "@clerk/clerk-react"; 
+import axios from "axios"; 
+import { toast } from "react-toastify"; 
 import Home from "./pages/Home";
 import Applications from "./pages/Applications";
 import ApplyJob from "./pages/ApplyJob";
-import CompanyProfile from "./pages/CompanyProfile"; // Added Import
+import CompanyProfile from "./pages/CompanyProfile"; 
 import RecruiterLogin from "./components/RecruiterLogin";
 import { AppContext } from "./context/AppContext";
 import Dashboard from "./pages/Dashboard";
@@ -23,13 +23,12 @@ import ApplyPopup from "./components/ApplyPopup";
 const App = () => {
   const { showRecruiterLogin, companyToken, showApplyPopup, setShowApplyPopup, popupJobData, userData, backendUrl, fetchUserApplications } = useContext(AppContext);
   const { user } = useUser();
-  const { getToken } = useAuth(); // Added getToken
+  const { getToken } = useAuth(); 
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     if (user && userData) {
-      // Check if profile is complete (Headline and Resume are key indicators)
       if ((!userData.headline || !userData.resume) && location.pathname !== '/onboarding' && !location.pathname.startsWith('/recruiter') && !location.pathname.startsWith('/dashboard')) {
         navigate('/onboarding');
       }
@@ -37,7 +36,6 @@ const App = () => {
   }, [user, userData, navigate, location]);
 
   const handleApplyConfirm = async (status) => {
-    // If user clicked "Yes, Applied" (status would be true/accepted)
     if (status) {
       try {
         const token = await getToken();

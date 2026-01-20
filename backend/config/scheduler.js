@@ -2,7 +2,7 @@ import cron from 'node-cron';
 import { internalFetchAndSaveMockJobs } from '../controller/jobController.js';
 
 const initScheduler = () => {
-    // Schedule task to run every day at midnight (or any interval user wants)
+    
     cron.schedule('0 0 * * *', async () => {
         console.log('Running Automatic Job Fetch (Mock)...');
         try {

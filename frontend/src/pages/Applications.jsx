@@ -430,8 +430,7 @@ const Applications = () => {
 
                                         if (data.success) {
                                           toast.success("Status Updated");
-                                          fetchUserData(); // Refresh to show new status
-                                          // Start fetchUserApplications is bound to context but explicit refresh better
+                                          fetchUserData(); 
                                           context.fetchUserApplications();
                                         } else {
                                           toast.error(data.message);

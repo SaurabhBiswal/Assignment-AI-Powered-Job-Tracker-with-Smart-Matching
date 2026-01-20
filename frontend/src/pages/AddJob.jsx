@@ -13,7 +13,6 @@ const AddJob = () => {
   const [level, setLevel] = useState("Junior Level");
   const [salary, setSalary] = useState(0);
 
-  // New Fields
   const [jobType, setJobType] = useState("");
   const [workMode, setWorkMode] = useState("");
   const [externalUrl, setExternalUrl] = useState("");
@@ -28,7 +27,6 @@ const AddJob = () => {
 
   const { backendUrl, companyToken } = useContext(AppContext);
 
-  // Validate the form
   useEffect(() => {
     if (title.trim() && salary > 0 && jobType && workMode) {
       setIsFormValid(true);
@@ -56,7 +54,6 @@ const AddJob = () => {
     try {
       setIsSubmitting(true);
 
-      // Get HTML content from Quill editor
       const description = quillRef.current ? quillRef.current.root.innerHTML : "";
 
       if (!description || description === "<p><br></p>") {
@@ -86,7 +83,6 @@ const AddJob = () => {
 
       if (data.success) {
         toast.success(data.message || "Job Posted Successfully!");
-        // Reset form fields
         setTitle("");
         setSalary(0);
         setExternalUrl("");
@@ -104,7 +100,6 @@ const AddJob = () => {
   };
 
   useEffect(() => {
-    // Initiate Quill only Once
     if (!quillRef.current && editorRef.current) {
       quillRef.current = new Quill(editorRef.current, {
         theme: "snow",

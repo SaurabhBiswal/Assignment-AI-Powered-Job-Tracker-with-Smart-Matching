@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import HeroImage from "../assets/image-gall.jpg"; // Replace with your high-quality image
+import HeroImage from "../assets/image-gall.jpg"; 
 import {
   FiSearch,
   FiDollarSign,

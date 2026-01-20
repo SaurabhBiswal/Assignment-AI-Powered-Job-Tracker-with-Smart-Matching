@@ -4,7 +4,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 let genAI = null;
 let model = null;
 
-// Initialize Gemini
+
 export const initializeAI = () => {
     if (!process.env.GEMINI_API_KEY) {
         console.warn("GEMINI_API_KEY is missing in .env");
@@ -39,7 +39,7 @@ export const generateMatchScore = async (resumeText, jobDescription) => {
         const response = await result.response;
         const text = response.text();
 
-        // Cleanup markdown if present
+      t
         const jsonString = text.replace(/```json/g, '').replace(/```/g, '').trim();
         return JSON.parse(jsonString);
 

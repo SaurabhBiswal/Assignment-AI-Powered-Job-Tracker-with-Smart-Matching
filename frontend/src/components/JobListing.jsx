@@ -20,12 +20,11 @@ const JobListing = () => {
   const [selectedMatchScore, setSelectedMatchScore] = useState('');
   const [sortBy, setSortBy] = useState('recent');
 
-  // Refs to track previous filter states
+ 
   const prevSelectedCategory = useRef(selectedCategory);
   const prevSelectedLocation = useRef(selectedLocation);
   const prevSearchFilter = useRef({ ...searchFilter });
 
-  // Job Matching Logic
   const calculateMatchScore = (job) => {
     return job.matchScore || Math.floor(Math.random() * 40) + 60; // Mock 60-100%
   };
@@ -99,23 +98,23 @@ const JobListing = () => {
         )
         .map(job => ({ ...job, matchScore: calculateMatchScore(job) }))
         .filter(job => {
-          // Match Score filter
+          
           if (selectedMatchScore === 'high') return job.matchScore >= 70;
           if (selectedMatchScore === 'medium') return job.matchScore >= 40 && job.matchScore < 70;
           return true;
         })
         .sort((a, b) => {
-          // Sort logic
+          
           if (sortBy === 'salary') return (b.salary || 0) - (a.salary || 0);
           if (sortBy === 'match') return b.matchScore - a.matchScore;
-          return 0; // recent - already reversed
+          return 0; 
         });
 
       setFilterJobs(newFilteredJobs);
       setCurrentPage(1);
     };
 
-    // Check if filters changed (excluding jobs update)
+  
     const filtersChanged =
       prevSelectedCategory.current !== selectedCategory ||
       prevSelectedLocation.current !== selectedLocation ||
@@ -209,7 +208,6 @@ const JobListing = () => {
                     <h3 className="font-bold text-lg text-gray-800">Current Search</h3>
                     <button onClick={clearAllFilters} className="text-sm text-primary hover:underline">Clear all</button>
                   </div>
-                  {/* ... (Search Tags UI kept simple or same as before) ... */}
                 </div>
               )}
 

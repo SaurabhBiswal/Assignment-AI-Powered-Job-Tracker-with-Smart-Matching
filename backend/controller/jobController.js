@@ -1,7 +1,7 @@
 import Job from "../models/Job.js";
 import Company from "../models/Company.js";
 
-// Get all jobs
+
 export const getJobs = async (req, res) => {
     try {
         const { title, location, category, level, jobType, workMode, datePosted } = req.query;

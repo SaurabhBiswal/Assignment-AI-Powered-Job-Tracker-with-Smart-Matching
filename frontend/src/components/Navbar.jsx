@@ -8,22 +8,17 @@ const Navbar = () => {
   const { openSignIn } = useClerk();
   const { user } = useUser();
   const navigate = useNavigate();
-  
-  // AppContext se userData aur setShowRecruiterLogin nikala
+
   const { setShowRecruiterLogin, userData } = useContext(AppContext);
   const [scrolled, setScrolled] = useState(false);
 
-  // --- Redirect Logic: Professional Onboarding ---
   useEffect(() => {
-    // Agar user Google se login kar chuka hai
-    // Aur humare pas uska backend data (userData) aa gaya hai
-    // Aur usne abhi tak headline nahi bhari (matlab naya user hai)
+ 
     if (user && userData && !userData.headline) {
       navigate("/onboarding");
     }
   }, [user, userData, navigate]);
 
-  // Handle scroll event for premium UI
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {

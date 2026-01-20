@@ -38,7 +38,7 @@ const CompanyProfile = () => {
 
   if (loading) return <h1 className="text-center mt-20">Loading... Please wait...</h1>;
 
-  // Agar data nahi mila toh ye dikhayega, white screen nahi aayegi
+  
   if (!companyData) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
@@ -49,7 +49,7 @@ const CompanyProfile = () => {
     );
   }
 
-  // Jobs filtering with safe checks
+
   const companyJobs = jobs ? jobs.filter(job => 
     job.companyId?._id === id || job.companyId === id
   ) : [];

@@ -156,51 +156,9 @@ graph TB
 | Storage | Cloudinary |
 | PDF Parsing | pdf-parse |
 
----
 
-## 🚀 Setup Instructions
 
-### Prerequisites
-- Node.js v18+
-- MongoDB Atlas account
-- Clerk, Cloudinary, Gemini API keys
 
-### Environment Variables
-
-**Backend (.env)**:
-```
-MONGODB_URI=your_mongodb_uri
-CLERK_SECRET_KEY=your_clerk_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-GEMINI_API_KEY=your_gemini_api_key
-PORT=3000
-```
-
-**Frontend (.env)**:
-```
-VITE_CLERK_PUBLISHABLE_KEY=your_clerk_pub_key
-VITE_BACKEND_URL=http://localhost:3000
-```
-
-### Installation
-
-```bash
-# Clone repo
-git clone <your-repo-url>
-cd Job-Portal-FINAL
-
-# Backend
-cd backend
-npm install
-npm run dev
-
-# Frontend (new terminal)
-cd frontend
-npm install
-npm run dev
-```
 
 ---
 

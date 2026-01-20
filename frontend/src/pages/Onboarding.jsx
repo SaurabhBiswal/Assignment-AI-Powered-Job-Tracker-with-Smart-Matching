@@ -12,7 +12,6 @@ const Onboarding = () => {
     const { backendUrl, fetchUserData } = useContext(AppContext);
     const [loading, setLoading] = useState(false);
 
-    // Fixed: Restored formData state
     const [formData, setFormData] = useState({
         headline: '',
         portfolio: '',

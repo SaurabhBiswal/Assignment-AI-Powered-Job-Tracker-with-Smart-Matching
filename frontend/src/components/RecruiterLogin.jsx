@@ -147,7 +147,6 @@ const RecruiterLogin = () => {
     resetForm();
   };
 
-  // Animation variants
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.3 } }

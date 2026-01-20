@@ -126,7 +126,6 @@ const ManageJobs = () => {
   );
 };
 
-// Reusable StatCard Component
 const StatCard = ({ icon, label, value, color }) => (
   <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center gap-5">
     <div className={`p-4 rounded-2xl bg-${color}-50 text-${color}-600 text-2xl`}>
@@ -139,7 +138,6 @@ const StatCard = ({ icon, label, value, color }) => (
   </div>
 );
 
-// Custom Toggle
 const ToggleButton = ({ checked, onChange }) => (
   <button 
     onClick={onChange}

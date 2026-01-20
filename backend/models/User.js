@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
   resume: { type: String },
   resumeText: { type: String },
   image: { type: String, required: true },
-  headline: { type: String, default: "" },      // e.g. "Senior MERN Developer"
-  portfolio: { type: String, default: "" },     // Website link
-  skills: { type: Array, default: [] },         // Skills list
+  headline: { type: String, default: "" },      
+  portfolio: { type: String, default: "" },     
+  skills: { type: Array, default: [] },        
   location: { type: String, default: "" }
 });
 

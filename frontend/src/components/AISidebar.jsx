@@ -12,13 +12,12 @@ const AISidebar = () => {
     const handleSend = async () => {
         if (!input.trim()) return;
 
-        // Add user message
+      
         const userMsg = { role: 'user', text: input };
         setMessages(prev => [...prev, userMsg]);
         setInput('');
 
-        // Mock AI response for now (since backend endpoint needs context)
-        // In real implementation, this would call /api/chat
+       
         setTimeout(() => {
             let aiText = "I'm processing that request...";
             const lowerInput = userMsg.text.toLowerCase();

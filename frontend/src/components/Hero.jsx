@@ -6,7 +6,7 @@ import { FiSearch, FiMapPin, FiArrowRight } from "react-icons/fi";
 import { FiBriefcase, FiUsers, FiTrendingUp } from "react-icons/fi";
 
 
-// Import company logos directly
+
 import companyLogo1 from "../assets/facebook-1-logo-svgrepo-com.svg";
 import companyLogo2 from "../assets/linkedin-logo-svgrepo-com.svg";
 import companyLogo3 from "../assets/slack-logo-svgrepo-com.svg";
@@ -48,8 +48,7 @@ const Hero = () => {
   const handleTagClick = (tag) => {
     setActiveTag(tag);
     titleRef.current.value = tag;
-    // Optional: automatically trigger search
-    // onSearch({ preventDefault: () => {} });
+   
   };
 
   const onSearch = (e) => {

@@ -20,7 +20,7 @@ export const AppContextProvider = (props) => {
     datePosted: ''
   });
 
-  const [isSearched, setIsSearched] = useState(false); // Changed setter to camelCase
+  const [isSearched, setIsSearched] = useState(false); 
 
   const [jobs, setJobs] = useState([]);
 
@@ -32,11 +32,9 @@ export const AppContextProvider = (props) => {
   const [userData, setUserData] = useState(null)
   const [userApplications, setUserApplications] = useState(null)
 
-  // Smart Application Tracking
   const [showApplyPopup, setShowApplyPopup] = useState(false);
   const [popupJobData, setPopupJobData] = useState(null);
 
-  // Function to Fetch Jobs data
   const fetchJobs = async () => {
     try {
       const queryParams = new URLSearchParams(searchFilter).toString();
@@ -56,13 +54,11 @@ export const AppContextProvider = (props) => {
 
   }
 
-  // Function to fetch Compnay Data
-  // Function to fetch Compnay Data
   const fetchCompanyData = async () => {
     try {
       const response = await axios.get(backendUrl + '/api/company/company', { headers: { token: companyToken } });
       const data = response.data;
-      console.log(data); // Move the console.log statement here
+      console.log(data); 
 
       if (data.success) {
         setCompanyData(data.company);
@@ -76,7 +72,6 @@ export const AppContextProvider = (props) => {
     }
   }
 
-  // Function to fetch User Data
   const fetchUserData = async () => {
     try {
 
@@ -95,7 +90,6 @@ export const AppContextProvider = (props) => {
     }
   }
 
-  // Function to fetch User's  Applied data
   const fetchUserApplications = async () => {
     try {
 
@@ -119,7 +113,7 @@ export const AppContextProvider = (props) => {
 
   useEffect(() => {
     fetchJobs();
-  }, [searchFilter]); // Re-fetch when filters change
+  }, [searchFilter]); 
 
   useEffect(() => {
     const storedCompanyToken = localStorage.getItem('companyToken');

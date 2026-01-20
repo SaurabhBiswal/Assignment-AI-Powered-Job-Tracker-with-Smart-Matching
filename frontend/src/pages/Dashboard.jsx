@@ -1,4 +1,3 @@
-// Fully Redesigned Futuristic Dashboard with Glassmorphism, Animations & Widgets
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { AppContext } from "../context/AppContext";

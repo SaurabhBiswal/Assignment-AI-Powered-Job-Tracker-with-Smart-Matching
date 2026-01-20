@@ -15,7 +15,7 @@ const JobCard = ({ job, matchScore = 0, matchExplanation = '' }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { setShowApplyPopup, setPopupJobData, userApplications } = useContext(AppContext);
 
-  // Check if the user has already applied to this job (handling populated or flat ID)
+ 
   const isApplied = userApplications?.some(app => {
     const appId = app.jobId?._id || app.jobId;
     return appId === job._id;

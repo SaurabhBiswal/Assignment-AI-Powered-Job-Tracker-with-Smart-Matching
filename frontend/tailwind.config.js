@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'job-dark': '#121E31',    // Dark Blue background
-        'job-orange': '#F7941E',  // Search button orange
+        'job-dark': '#121E31',    
+        'job-orange': '#F7941E', 
       },
     },
   },

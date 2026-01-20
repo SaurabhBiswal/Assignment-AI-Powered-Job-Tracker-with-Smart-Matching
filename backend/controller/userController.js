@@ -9,7 +9,7 @@ const pdf = require('pdf-parse');
 import { generateMatchScore } from "../utils/aiService.js";
 
 
-// --- GET USER DATA (With Auto-Registration) ---
+
 export const getUserData = async (req, res) => {
   try {
     const userId = typeof req.auth === 'function' ? req.auth().userId : req.auth.userId;
